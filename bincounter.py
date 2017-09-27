@@ -147,7 +147,7 @@ else: # if we're not training then we must be loading from file
 
 print('\nCounting starting with: 0 0 0')
 res = sess.run(results, feed_dict={x: [[0, 0, 0]]})
-print('%g %g %g'%(res[0][0], res[0][1], res[0][2]))
+print('%g %g %g'%(int(round(res[0][0])), int(round(res[0][1])), int(round(res[0][2]))))
 for i in range(8):
   res = sess.run(results, feed_dict={x: res})
-  print('%g %g %g'%(res[0][0], res[0][1], res[0][2]))
+  print('%g %g %g'%(int(round(res[0][0])), int(round(res[0][1])), int(round(res[0][2]))))
