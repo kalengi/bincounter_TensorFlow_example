@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # bincounter - Binary counter implemented as a neural network using the
 # TensorFlow framework.
 #
@@ -36,15 +38,17 @@
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
+import locals
+
 do_training = 1 # 1 = do the training, 0 = load from file and just run it
-save_trained = 0 # 1 = save to file after training, 0 = don't save
+save_trained = 1 # 1 = save to file after training, 0 = don't save
 # Change the following to where you want the network to be saved to.
 # Make sure to create the directory structure.
-save_file = '/home/pi/src/tflogdir/bincounter.ckpt'
-write_for_tensorboard = 0 # 1 = write info for TensorBoard, 0 = don't
+save_file = locals.SAVE_FILE_PATH
+write_for_tensorboard = 1 # 1 = write info for TensorBoard, 0 = don't
 # Change the following to where you want the info to be saved.
 # Make sure to create the directory structure.
-tensorboard_file = '/home/pi/src/tflogdir/bincounter_tb/1'
+tensorboard_file = locals.TENSORBOARD_FILE_PATH
 
 NUM_INPUTS = 3
 NUM_HIDDEN = 5
@@ -151,3 +155,27 @@ print('%g %g %g'%(int(round(res[0][0])), int(round(res[0][1])), int(round(res[0]
 for i in range(8):
   res = sess.run(results, feed_dict={x: res})
   print('%g %g %g'%(int(round(res[0][0])), int(round(res[0][1])), int(round(res[0][2]))))
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
